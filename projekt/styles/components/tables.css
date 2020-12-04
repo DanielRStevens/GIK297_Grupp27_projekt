@@ -1,0 +1,24 @@
+.table {
+    margin: 0;
+    padding: 0; 
+}
+.table__head{
+    background-color: var(---clr1VeryDark);
+}
+.table__cell{
+  border: 1px solid var(--black);
+  margin: 0;
+  padding: 0; 
+}
+.table__cell--header{
+    font-weight: bold;
+
+}
+.table__row{
+}
+.table__row--odd{
+    background-color: var(--white);
+}
+.table__row--even{
+    background-color: var(--clr1VeryLightDesat);
+}
