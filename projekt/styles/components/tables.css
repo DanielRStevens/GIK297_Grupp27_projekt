@@ -23,28 +23,30 @@
     background-color: var(--clr1VeryLightDesat);
 }
 
-/* Tabellen kan inte bli mindre än 423px */
+/* Den specifika tabellen vi arbetar med kan inte bli mindre än 423px.
+    Denna storlek kan ändras om man måste generalisera: för nuvarande gör vi det genom att ge tabellen klassen .table--323px
+*/
 @media only screen and (max-width:423px) {
     /* Denna kod är baserad på Chris Coyiers och hans css-tricks.com artikel "Responsive Data Tables".
         Tables är svåra att göra responsivt, så istället tar vi och helt gör om dem till något mer list-aktigt.
     */
     
     /* Gör så att tabellen ej längre är en tabell. */
-    .table, .table__head, .table__body, .table__cell, .table__row {
+    .table--323px, .table--323px .table__head, .table--323px .table__body, .table--323px .table__cell, .table--323px .table__row {
         display: block;
     }
     /* Tyvärr så måste vi använda position här, men det behövs för accessibilty-skäl.
         Man skulle kunna använda display:none, men det kvaddar till för skärmläsare. Istället så behåller vi headern men sätter den där ingen kan se den.   
     */
-    .table__row--header {
+    .table--323px .table__row--header {
         position: absolute;
         top: -9999px;
         left: -9999px;
     }
-    .table__row {
+    .table--323px .table__row {
         border: 1px solid var(--black);
     }
-    .table__cell {
+    .table--323px .table__cell {
         /* Dataceller beter sig nu mer som rader. */
         border: none;
         border-bottom: 1px solid var(--black);
@@ -52,7 +54,7 @@
         padding-left: 50%;
         
     }
-    .table__cell:before {
+    .table--323px .table__cell:before {
         position:absolute; /* Dito här. Jag tror att man säkert kan få detta att fungera med flexbox, men vågar inte riskera det när detta fungerar. */
         left: 6px;
         width:45%;
@@ -63,12 +65,12 @@
     /*
         Lägger till headers. Detta är lite överkurs, så all kredit går till Coyier.
     */
-    .table__cell:nth-of-type(1):before { content: "Kurskod";}
-    .table__cell:nth-of-type(2):before { content: "Kursnamn";}
-    .table__cell:nth-of-type(3):before { content: "Period";}
-    .table__cell:nth-of-type(4):before { content: "Roll";}
-    .table__cell:nth-of-type(5):before { content: "SY";}
-    .table__cell:nth-of-type(6):before { content: "IT";}
-    .table__cell:nth-of-type(7):before { content: "ID";}
-    .table__cell:nth-of-type(8):before { content: "GD";}
+    .table--323px .table__cell:nth-of-type(1):before { content: "Kurskod";}
+    .table--323px .table__cell:nth-of-type(2):before { content: "Kursnamn";}
+    .table--323px .table__cell:nth-of-type(3):before { content: "Period";}
+    .table--323px .table__cell:nth-of-type(4):before { content: "Roll";}
+    .table--323px .table__cell:nth-of-type(5):before { content: "SY";}
+    .table--323px .table__cell:nth-of-type(6):before { content: "IT";}
+    .table--323px .table__cell:nth-of-type(7):before { content: "ID";}
+    .table--323px .table__cell:nth-of-type(8):before { content: "GD";}
 }
